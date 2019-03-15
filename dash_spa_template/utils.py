@@ -4,7 +4,7 @@ from functools import wraps
 
 def get_url(path):
     """Expands an internal URL to include prefix the app is mounted at"""
-    return f"{server.config['ROUTES_PATHNAME_PREFIX']}{path}"
+    return r"{}{}".format(server.config['ROUTES_PATHNAME_PREFIX'], path)
 
 
 def component(func):
@@ -24,7 +24,7 @@ def component(func):
 
         if className is not None:
             if hasattr(result, 'className'):
-                result.className = f'{className} {result.className}'
+                result.className = r'{} {}'.format(className, result.className)
             else:
                 result.className = className
 

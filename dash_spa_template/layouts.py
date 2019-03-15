@@ -12,7 +12,7 @@ def main_layout_header():
     """Dash layout with a top navbar."""
     return html.Div(
         [
-            dbc.Navbar(
+            dbc.NavbarSimple(
                 id="navbar",
                 brand="Example",
                 sticky="top",
